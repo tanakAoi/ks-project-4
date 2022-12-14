@@ -28,7 +28,6 @@
         .black-box {
             right: calc(var(--gap-l) * -1 );
             bottom: calc(var(--gap-l) * -1 );
-
         }
     }
 
@@ -38,7 +37,6 @@
     }
 
     &__excerpt {
-        color: var(--color-dark-600);
 
         p {
             margin: 0;
