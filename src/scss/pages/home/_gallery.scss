@@ -9,17 +9,20 @@
         margin-top: calc( var(--section-gap)*-1 );
         grid-column: inner;
         display: flex;
+        flex-wrap: wrap;
         gap: var(--gap-l);
     }
 
     &__item {
+        flex: 1;
         aspect-ratio: 1 / 1;
         @include details.frame;
+        min-width: 200px;
 
         img {
+            object-fit: cover;
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
     }
 

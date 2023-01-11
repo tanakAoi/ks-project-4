@@ -1,4 +1,5 @@
 @use '../components/details';
+@use '../utilities/responsive';
 
 .site-footer {
     @include details.frame;
@@ -34,6 +35,17 @@
         color: var(--color-dark-500);
         text-align: center;
     }
+
+    // 640px (40rem)
+    @include responsive.max(40rem) {
+        padding-left: var(--gap-m);
+        padding-right: var(--gap-m);
+
+        &__copyright {
+            font-size: 0.85rem;
+        }
+    }
+
 }
 
 #map {

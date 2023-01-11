@@ -1,10 +1,12 @@
 @use '../../components/buttons' as button;
 @use '../../components/details';
+@use '../../utilities/responsive';
 
 .about {
     display: grid;
     grid-template-columns: var(--grid-container);
     padding: var(--section-gap) 0;
+    overflow: hidden;
 
     &__inner {
         grid-column: inner;
@@ -13,6 +15,36 @@
         gap: var(--gap-l);
         padding: 0 var(--gap-l);
         align-items: center;
+
+        // 1024px (64rem)
+        @include responsive.max(64rem) {
+            grid-template-columns: 1fr;
+            padding: 0 var(--gap-xl);        
+        }
+
+        // 640px (40rem)
+        @include responsive.max(40rem) {
+            padding: 0 var(--gap-m);        
+        }
+
+        // 480px (30rem)
+        @include responsive.max(30rem) {
+            padding: 0;        
+        }
+
+
+    }
+
+    &__content {
+        
+        // 1024px (64rem)
+        @include responsive.max(64rem) {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: var(--section-gap-inner);
+        }
     }
 
     &__image {
@@ -29,11 +61,28 @@
             right: calc(var(--gap-l) * -1 );
             bottom: calc(var(--gap-l) * -1 );
         }
+
+        // 1024px (64rem)
+        @include responsive.max(64rem) {
+            aspect-ratio: 1 / 1;
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        
     }
 
     &__title {
         margin-top: 0;
         @include details.separator;
+
+        // 1024px (64rem)
+        @include responsive.max(64rem) {
+            @include details.separator($align: center);
+        }
     }
 
     &__excerpt {
@@ -54,7 +103,15 @@
 
     &__buttons {
         display: flex;
+        flex-wrap: wrap;
         gap: var(--gap-m);
+        
+        // 640px (40rem)
+        @include responsive.max(40rem) {
+            gap: var(--gap-s);
+            justify-content: center;
+        }
+
     }
 
     &__button {
@@ -74,6 +131,12 @@
     width: 333px;
     height: 333px;
     position: absolute;
+
+    // 640px (40rem)
+    @include responsive.max(40rem) {
+        height: 250px;
+        width: 250px;
+    }
 }
 
 
