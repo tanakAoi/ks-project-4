@@ -13,7 +13,7 @@ input, button {
     &[type="email"] {
         max-width: 100%;
         width: 100%;
-        border: 1px solid var(--color-dark-900);
+        border: 1px solid var(--color-dark-1000);
         background-color: var(--color-accent-900);
         padding: 0.5rem 1rem;
         font-size: var(--font-size-2);
@@ -42,7 +42,7 @@ input, button {
 textarea {
     max-width: 100%;
     width: 100%;
-    border: 1px solid var(--color-dark-900);
+    border: 1px solid var(--color-dark-1000);
     background-color: var(--color-accent-900);
     padding: 0.5rem 1rem;
     font-size: var(--font-size-2);
